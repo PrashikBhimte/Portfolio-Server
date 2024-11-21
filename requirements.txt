@@ -1,5 +1,4 @@
-flask
-dotenv
-os
-twilio
-flask_cors
+Flask==3.0.2
+Flask-Cors==4.0.0
+twilio==8.12.0
+python-dotenv==1.0.1

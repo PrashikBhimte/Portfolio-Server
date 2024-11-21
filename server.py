@@ -14,7 +14,11 @@ server = Flask(__name__)
 CORS(server)
 client = Client(accountSID, auccAuth)
 
-@server.route('/', methods=['POST'])
+@server.route('/', methods=['GET'])
+def default():
+    return jsonify({ "status" : "good" }), 200
+
+@server.route('/sendmessage', methods=['POST'])
 def addData():
     data = dict(request.get_json())
     try : 
@@ -28,4 +32,4 @@ def addData():
         return jsonify({ "status" : "bad" }), 200
 
 if __name__ == "__main__":
-    server.run(port=8000)    
+    server.run(host='0.0.0.0', port=8000)   

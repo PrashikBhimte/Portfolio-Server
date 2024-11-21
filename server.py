@@ -13,7 +13,6 @@ number = getenv('TWILIO_PHONE_NO')
 server = Flask(__name__)
 CORS(server)
 client = Client(accountSID, auccAuth)
-server.debug = True
 
 @server.route('/', methods=['POST'])
 def addData():
@@ -29,4 +28,4 @@ def addData():
         return jsonify({ "status" : "bad" }), 200
 
 if __name__ == "__main__":
-    server.run()    
+    server.run(port=8000)    

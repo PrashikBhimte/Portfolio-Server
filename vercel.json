@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "./server.py",
-            "use": "gunicorn --bind 0.0.0.0:8000 server:server"
+            "use": "@vercel/python"
         }
     ],
     "routes": [
